@@ -1,0 +1,50 @@
+{
+  "info": {
+    "name": "GrimorioLab Oracle",
+    "_postman_id": "grimoriolab-oracle",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Analyze Competitors",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{SERVER_TOKEN}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{BASE_URL}}/api/competitors/analyze",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "api",
+            "competitors",
+            "analyze"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"project_id\": \"demo-123\",\n  \"brand\": \"Blauw GrimorioLab\",\n  \"market\": \"Brand & Digital Design Studios\",\n  \"region\": \"Canada\",\n  \"languages\": [\n    \"en\",\n    \"pt-br\"\n  ],\n  \"briefing\": {\n    \"mission\": \"Human brands that transform\"\n  },\n  \"competitors\": [\n    \"Studio A\",\n    \"Studio B\",\n    \"Studio C\"\n  ],\n  \"tasks\": [\n    \"market_scan\",\n    \"social_trends\",\n    \"visual_cues\",\n    \"archetype_match\"\n  ],\n  \"mask_brand\": true\n}"
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "SERVER_TOKEN",
+      "value": "replace-me"
+    }
+  ]
+}
